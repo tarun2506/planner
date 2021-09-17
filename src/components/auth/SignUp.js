@@ -29,7 +29,7 @@ function SignUp() {
   return (
     <div className="container">
       <form className="white" onSubmit={handleSubmit}>
-        <h5 className="grey-text text-darken-3 ">Sign Up</h5>
+        <h3 className="black-text">Sign Up</h3>
         <div className="input-field">
           <input
             type="email"

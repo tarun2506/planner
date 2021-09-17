@@ -21,7 +21,7 @@ function SignIn() {
   return (
     <div className="container">
       <form className="white" onSubmit={handleSubmit}>
-        <h5 className="grey-text text-darken-3 ">Sign In</h5>
+        <h3 className="black-text">Sign In</h3>
         <div className="input-field">
           <input
             type="email"

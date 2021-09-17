@@ -21,7 +21,7 @@ function CreateProject() {
   return (
     <div className="container">
       <form className="white" onSubmit={handleSubmit}>
-        <h5 className="grey-text text-darken-3 ">Create Project</h5>
+        <h3 className="black-text">Create Project</h3>
         <div className="input-field">
           <input
             type="text"

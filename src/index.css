@@ -7,20 +7,21 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: url(./img/bg.jpg) no-repeat;
   background-size: 100%;
   background-position: bottom;
-  background-color: #333;
+  background-color: #020125;
 }
 
 form {
   margin-top: 2.5rem;
   padding: 2rem;
+  border-radius: 1rem !important;
 }
 
 form button,
-form h5 {
+form h3 {
   margin: 2rem 0;
+  font-weight: bold;
 }
 
 input[type="text"]:not(.browser-default):focus:not([readonly]),
@@ -47,7 +48,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .button {
-  background-color: #020125 !important;
+  background-color: #040236 !important;
 }
 nav {
   background-color: #020125;
@@ -59,4 +60,32 @@ nav {
 
 .link:hover {
   color: #8b12c7 !important;
+}
+
+button {
+  border-radius: 0.3rem !important;
+}
+
+.card-title {
+  font-size: 3rem !important;
+  font-weight: bold !important;
+  margin-bottom: 1rem !important;
+}
+
+.card {
+  margin-top: 10rem;
+  border-radius: 1rem !important;
+}
+
+.card-action {
+  border-radius: 1rem !important;
+}
+
+.card-content p {
+  font-size: 1.5rem;
+}
+
+.card-action div {
+  font-size: 1.2rem;
+  font-weight: 500;
 }

@@ -4,7 +4,7 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 function Navbar() {
   return (
-    <nav className="nav-wrapper darken-3">
+    <nav className="nav-wrapper darken-3 z-depth-0">
       <div className="container">
         <Link to="/" className="brand-logo">
           Planner

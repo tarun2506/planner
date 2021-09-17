@@ -12,7 +12,7 @@ function ProjectDetails({ match }) {
             Cupiditate, tempora?
           </p>
         </div>
-        <div className="card-action black white-text">
+        <div className="card-action  black-text">
           <div>Posted By xO</div>
           <div>2nd September, 4am</div>
         </div>
