@@ -71,8 +71,13 @@ button {
   font-weight: bold !important;
   margin-bottom: 1rem !important;
 }
+.card-titlee {
+  font-size: 2.2rem !important;
+  font-weight: bold !important;
+  margin-bottom: 0.2rem !important;
+}
 
-.card {
+.cardd {
   margin-top: 10rem;
   border-radius: 1rem !important;
 }

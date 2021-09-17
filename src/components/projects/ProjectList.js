@@ -1,29 +1,20 @@
 import React from "react";
 import ProjectSummary from "./ProjectSummary";
 
-function ProjectList() {
+function ProjectList({ projects }) {
   return (
     <div className="section project-list">
-      <ProjectSummary
-        title="Project title"
-        description="Posted by xO"
-        date="2nd August, 3pm"
-      />
-      <ProjectSummary
-        title="Project title"
-        description="Posted by xO"
-        date="2nd August, 3pm"
-      />
-      <ProjectSummary
-        title="Project title"
-        description="Posted by xO"
-        date="2nd August, 3pm"
-      />
-      <ProjectSummary
-        title="Project title"
-        description="Posted by xO"
-        date="2nd August, 3pm"
-      />
+      {projects &&
+        projects.map((project) => {
+          return (
+            <ProjectSummary
+              title={project.title}
+              key={project.id}
+              content={project.content}
+              date={project.date}
+            />
+          );
+        })}
     </div>
   );
 }
