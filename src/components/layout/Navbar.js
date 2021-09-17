@@ -1,14 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 function Navbar() {
   return (
     <nav className="nav-wrapper darken-3">
       <div className="container">
-        <NavLink to="/" className="brand-logo">
+        <Link to="/" className="brand-logo">
           Planner
-        </NavLink>
+        </Link>
         <SignedInLinks />
         <SignedOutLinks />
       </div>

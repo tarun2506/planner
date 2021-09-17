@@ -5,10 +5,14 @@ function SignedInLinks() {
   return (
     <ul className="right">
       <li>
-        <NavLink to="/create">New Project</NavLink>
+        <NavLink className="link" to="/create">
+          New Project
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/">Log Out</NavLink>
+        <NavLink className="link" to="/logout">
+          Log Out
+        </NavLink>
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating profile">

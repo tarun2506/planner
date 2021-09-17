@@ -32,12 +32,31 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .profile {
-  background-color: #020125 !important;
+  background-color: #7003a5 !important;
+  transition: 0.5s all ease;
+}
+
+.active {
+  border-bottom: 1px solid #7003a5;
+}
+
+.profile:hover {
+  /*opacity: 0.9;*/
+  color: #7003a5 !important;
+  background-color: white !important;
 }
 
 .button {
   background-color: #020125 !important;
 }
 nav {
-  background-color: #7003a5;
+  background-color: #020125;
+}
+
+.link {
+  transition: all 0.5s ease;
+}
+
+.link:hover {
+  color: #8b12c7 !important;
 }
