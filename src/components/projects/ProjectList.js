@@ -19,6 +19,11 @@ function ProjectList() {
         description="Posted by xO"
         date="2nd August, 3pm"
       />
+      <ProjectSummary
+        title="Project title"
+        description="Posted by xO"
+        date="2nd August, 3pm"
+      />
     </div>
   );
 }
