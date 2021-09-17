@@ -68,7 +68,7 @@ function SignUp() {
         </div>
         <div className="input-field">
           <button type="submit" className="btn red lighten-1 z-depth-0">
-            Login
+            Sign up
           </button>
         </div>
       </form>
