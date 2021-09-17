@@ -1,5 +1,43 @@
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: url(./img/bg.jpg) no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #333;
+}
+
+form {
+  margin-top: 2.5rem;
+  padding: 2rem;
+}
+
+form button,
+form h5 {
+  margin: 2rem 0;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-color: #020125;
+  box-shadow: none;
+}
+
+.profile {
+  background-color: #020125 !important;
+}
+
+.button {
+  background-color: #020125 !important;
+}
+nav {
+  background-color: #7003a5;
 }

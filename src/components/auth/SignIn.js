@@ -39,7 +39,7 @@ function SignIn() {
           />
         </div>
         <div className="input-field">
-          <button type="submit" className="btn red lighten-1 z-depth-0">
+          <button type="submit" className="btn button z-depth-0">
             Login
           </button>
         </div>
