@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { signOut } from "../../store/actions/authActions";
-import { connect } from "react-redux";
-function SignedInLinks({ signOut }) {
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
+function SignedInLinks() {
+  const profileInfo = useSelector((state) => state.profile.profileInfo);
+  const dispatch = useDispatch();
+
   return (
     <ul className="right">
       <li>
@@ -11,23 +16,17 @@ function SignedInLinks({ signOut }) {
         </NavLink>
       </li>
       <li>
-        <a className="link" onClick={signOut}>
+        <a className="link" onClick={() => dispatch(signOut())}>
           Log Out
         </a>
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating profile">
-          xO
+          {profileInfo ? profileInfo.initials : "U"}
         </NavLink>
       </li>
     </ul>
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    signOut: () => dispatch(signOut()),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(SignedInLinks);
+export default SignedInLinks;

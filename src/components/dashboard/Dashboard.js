@@ -6,8 +6,8 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router";
 
-function Dashboard({ projects, auth }) {
-  return auth.uid ? (
+function Dashboard({ projects, user }) {
+  return user ? (
     <div className="dashboard container">
       <div className="row">
         <div className="col s12 m6">
@@ -26,7 +26,7 @@ function Dashboard({ projects, auth }) {
 const mapStateToProps = (state) => {
   return {
     projects: state.firestore.ordered.projects,
-    auth: state.firebase.auth,
+    user: state.auth.user,
   };
 };
 

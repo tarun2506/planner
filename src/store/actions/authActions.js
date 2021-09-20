@@ -13,6 +13,12 @@ export const signIn = (credentials) => {
   };
 };
 
+export const setCurrentAuthUser = () => {
+  return (dispatch) => {
+    dispatch({ type: "UPDATE_USER" });
+  };
+};
+
 export const signOut = () => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();

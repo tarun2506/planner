@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createProject } from "../../store/actions/projectActions";
 import { Redirect } from "react-router";
 
-function CreateProject({ createProject, auth }) {
+function CreateProject({ createProject, user }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const handleSubmit = (e) => {
@@ -22,7 +22,7 @@ function CreateProject({ createProject, auth }) {
         return null;
     }
   };
-  return auth.uid ? (
+  return user ? (
     <div className="container">
       <form className="white" onSubmit={handleSubmit}>
         <h3 className="black-text">Create Project</h3>
@@ -65,7 +65,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.firebase.auth,
+    user: state.auth.user,
   };
 };
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
-import { Provider, useSelector } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import thunk from "redux-thunk";
 import {
   createFirestoreInstance,
@@ -15,9 +15,12 @@ import {
   ReactReduxFirebaseProvider,
   getFirebase,
   isLoaded,
+  reactReduxFirebase,
 } from "react-redux-firebase";
 import fbConfig from "./config/FirebaseConfig";
 import firebase from "firebase/app";
+import { setCurrentAuthUser } from "./store/actions/authActions";
+import { profile } from "./store/actions/profileActions";
 
 const store = createStore(
   rootReducer,
@@ -35,8 +38,20 @@ const rrfProps = {
 };
 
 function AuthIsLoaded({ children }) {
-  const auth = useSelector((state) => state.firebase.auth);
-  if (!isLoaded(auth)) return <div>Loading Screen...</div>;
+  const [isChecking, setIsChecking] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(profile(user.uid));
+      }
+      dispatch(setCurrentAuthUser());
+      setIsChecking(false);
+    });
+  }, []);
+
+  if (isChecking) return <div>Loading Screen...</div>;
   return children;
 }
 

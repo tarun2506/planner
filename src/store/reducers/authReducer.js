@@ -1,9 +1,14 @@
+import firebase from "../../config/FirebaseConfig";
+
 const initState = {
   authError: null,
+  user: null,
 };
 
 const authReducer = (state = initState, action) => {
   switch (action.type) {
+    case "UPDATE_USER":
+      return { ...state, user: firebase.auth().currentUser };
     case "LOGIN_ERROR":
       console.log("login error");
       return { ...state, authError: action.err.message };
