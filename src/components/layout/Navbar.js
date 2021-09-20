@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { profile } from "../../store/actions/profileActions";
-import { useDispatch } from "react-redux";
 
-function Navbar({ user, profileLoader, profile }) {
+function Navbar({ user, profile }) {
   const links = user ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
   return (
     <nav className="nav-wrapper darken-3 z-depth-0">

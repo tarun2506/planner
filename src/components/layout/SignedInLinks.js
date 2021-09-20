@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 function SignedInLinks() {
   const profileInfo = useSelector((state) => state.profile.profileInfo);
+  const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
