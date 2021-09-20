@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { signIn } from "../../store/actions/authActions";
 
-function SignIn() {
+function SignIn({ signIn, authError }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    signIn({ email, password });
     setEmail("");
     setPassword("");
   };
@@ -42,10 +45,26 @@ function SignIn() {
           <button type="submit" className="btn button z-depth-0">
             Login
           </button>
+          <div className="red-text center">
+            {authError ? <p>{authError} </p> : null}
+          </div>
         </div>
       </form>
     </div>
   );
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    authError: state.auth.authError,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
