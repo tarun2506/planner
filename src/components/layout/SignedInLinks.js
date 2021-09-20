@@ -11,7 +11,9 @@ function SignedInLinks({ signOut }) {
         </NavLink>
       </li>
       <li>
-        <a onClick={signOut}>Log Out</a>
+        <a className="link" onClick={signOut}>
+          Log Out
+        </a>
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating profile">
