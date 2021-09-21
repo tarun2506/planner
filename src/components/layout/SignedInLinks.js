@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 
 function SignedInLinks() {
   const profileInfo = useSelector((state) => state.profile.profileInfo);
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
@@ -23,7 +22,7 @@ function SignedInLinks() {
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating profile">
-          {profileInfo ? profileInfo.initials : "U"}
+          {profileInfo ? profileInfo.initials : ""}
         </NavLink>
       </li>
     </ul>

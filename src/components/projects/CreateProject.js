@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createProject } from "../../store/actions/projectActions";
 import { Redirect } from "react-router";
 
-function CreateProject({ createProject, user }) {
+function CreateProject({ history }) {
+  const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    createProject({ title, content });
+    dispatch(createProject({ title, content }));
     setTitle("");
     setContent("");
+    history.push("/");
   };
   const handleChange = (e) => {
     switch (e.target.id) {
@@ -57,16 +60,4 @@ function CreateProject({ createProject, user }) {
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createProject: (project) => dispatch(createProject(project)),
-  };
-};
-
-const mapStateToProps = (state) => {
-  return {
-    user: state.auth.user,
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CreateProject);
+export default CreateProject;
