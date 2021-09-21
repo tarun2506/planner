@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import moment from "moment";
 function ProjectSummary({ project }) {
+  console.log(project.createdAt.toDate());
   return (
     <div className="card z-depth-0 project-summary">
       <div className="card-content grey-text text-darken-3">
@@ -8,7 +9,9 @@ function ProjectSummary({ project }) {
         <p>
           Posted by {project.authorFirstName} {project.authorLastName}
         </p>
-        <p className="grey-text">date</p>
+        <p className="grey-text">
+          {moment(project.createdAt.toDate()).calendar()}
+        </p>
       </div>
     </div>
   );

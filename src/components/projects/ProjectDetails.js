@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router";
+import moment from "moment";
 
 function ProjectDetails({ match, project, user }) {
   const id = match.params.id;
@@ -18,7 +19,7 @@ function ProjectDetails({ match, project, user }) {
           <div>
             Posted By {project.authorFirstName} {project.authorLastName}
           </div>
-          <div>2nd September, 4am</div>
+          <div>{moment(project.createdAt.toDate()).calendar()}</div>
         </div>
       </div>
     </div>
